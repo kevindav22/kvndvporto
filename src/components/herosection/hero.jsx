@@ -5,7 +5,7 @@ import { aboutme } from '../../assets/data';
 
 const Hero = () => {
   return (
-    <section className="text-white flex items-center min-h-[calc(100vh-64px)]">
+    <section className="text-white flex items-center min-h-screen pt-20 md:pt-0">
       <div className=" mx-auto px-6 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-5 items-center gap-12 md:gap-16">
           {/* TEKS & KONTEN */}
