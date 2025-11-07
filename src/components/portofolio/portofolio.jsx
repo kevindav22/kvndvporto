@@ -42,7 +42,7 @@ const Portfolio = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`px-2 py-1 md:px-4 md:py-2 text-xs md-text-base rounded-md transition
+              className={`px-2 py-1 md:px-4 font-semibold md:py-2 text-md md:text-lg rounded-md transition
                 ${activeCategory === cat ? 'text-[#C4A77D] border border-[#C4A77D]' : 'text-[#B0B0B0] border border-transparent hover:border-[#C4A77D]'} text-sm md:text-base`}
               onClick={() => setActiveCategory(cat)}
             >
@@ -59,7 +59,7 @@ const Portfolio = () => {
           </div>
         ) : (
           <>
-            <div className="columns-3 md:columns-4 gap-2 space-y-2 select-none">
+            <div className="columns-2 md:columns-3 gap-2 space-y-2 select-none">
               {displayedProjects.map((project, index) => {
                 const animation = aosAnimations[index % aosAnimations.length];
                 const scale = imageScales[project.id] || 1;
