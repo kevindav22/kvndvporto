@@ -1,50 +1,68 @@
+import { useRef } from 'react';
+import { FiExternalLink } from 'react-icons/fi';
+import { FaCalendarAlt } from 'react-icons/fa';
+
+const graphicDesignLinks = {
+  drive: 'https://drive.google.com/drive/folders/1BWoGVE733J0KigmLw2hY2M6o4Ss-mlxH',
+};
+
 const ProjectModal = ({ project, onClose }) => {
+  const modalRef = useRef();
+
   if (!project) return null;
 
+  const handleOutsideClick = (e) => {
+    if (modalRef.current && !modalRef.current.contains(e.target)) {
+      onClose();
+    }
+  };
+
+  // Pilih link berdasarkan kategori
+  const linkTarget = project.category === 'Graphic Design' ? graphicDesignLinks.drive : project.link;
+
   return (
-    <div className="fixed inset-0 bg-black/10 backdrop-blur-md flex items-center justify-center z-50 p-4">
-      <div className="relative bg-[#0E1C2D] w-full sm:max-w-xl rounded-xl shadow-xl overflow-hidden max-h-[90vh]">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={handleOutsideClick}>
+      <div ref={modalRef} className="relative bg-[#0E1C2D] rounded-xl shadow-xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto">
         {/* Tombol Close */}
-        <button onClick={onClose} className="absolute text-2xl top-3 right-3 text-gray-300 hover:text-white z-30">
+        <button onClick={onClose} className="absolute top-4 right-4 text-2xl text-gray-400 hover:text-white transition-colors">
           ✖
         </button>
 
-        {/* Gambar background */}
-        <div className="w-full relative min-h-[40vh] sm:h-[65vh]">
-          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+        <p className="text-xs md:text-sm mb-2 text-gray-400">{project.subcategory}</p>
 
-          {/* Overlay gradasi ringan supaya lebih gelap */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+        {/* Judul + Link di atas */}
+        <div className="flex items-center mb-3 gap-2">
+          <h2 className="text-xl md:text-2xl font-semibold text-[#C4A77D]">{project.title}</h2>
 
-          {/* Konten teks di bawah gambar */}
-          <div className="absolute bottom-0 left-0 right-0 z-10">
-            <div className="relative backdrop-blur-lg bg-black/40 rounded-lg p-4 flex flex-col justify-start gap-4">
-              {/* Kiri: teks */}
-              <div className="flex-1 relative">
-                <h2 className="text-xl font-bold text-[#C4A77D] mb-2">{project.title}</h2>
-                <p className="text-gray-200 mb-2">{project.description}</p>
-
-                {/* Tech Stack */}
-                {project.tech && project.tech.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((t, idx) => (
-                      <span key={idx} className="px-2 py-1 text-xs border border-[#C4A77D] rounded-full text-[#C4A77D] bg-black/50">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                {/* Tombol View Project tetap di kanan atas konten teks */}
-                {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="absolute top-0 right-0 z-20 inline-block text-sm text-white bg-[#C4A77D] px-4 py-2 rounded-lg hover:bg-[#a3875c] transition">
-                    View Project
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
+          {linkTarget && (
+            <a href={linkTarget} target="_blank" rel="noopener noreferrer" className="text-[#C4A77D] hover:text-[#a3875c] transition" title="Kunjungi Project">
+              <FiExternalLink size={20} />
+            </a>
+          )}
         </div>
+
+        {/* Deskripsi */}
+        <p className="text-gray-300 text-xs md:text-sm leading-relaxed text-justify mb-4">{project.description}</p>
+
+        {/* Tech Stack + Date */}
+        {(project.tech && project.tech.length > 0) || project.date ? (
+          <div className="flex flex-wrap items-center justify-between mb-4 gap-y-3">
+            <div className="flex flex-wrap gap-2">
+              {project.tech?.map((t, idx) => (
+                <span key={idx} className="px-3 py-1 text-xs md:text-sm border border-[#C4A77D] rounded-full text-[#C4A77D] bg-black/30">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            {project.date && (
+              <div className="flex items-center gap-2 text-[#C4A77D] text-xs md:text-sm">
+                <FaCalendarAlt className="text-[#C4A77D]" />
+                <span>{project.date}</span>
+              </div>
+            )}
+          </div>
+        ) : null}
       </div>
     </div>
   );

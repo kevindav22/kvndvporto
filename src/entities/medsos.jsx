@@ -1,11 +1,11 @@
 // SocialMedia.jsx
-import { FaLinkedin, FaInstagram, FaWhatsapp, FaTiktok, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaTiktok, FaGithub, FaGoogleDrive } from 'react-icons/fa';
 import { socialLinks } from '../assets/data';
 
 const icons = {
   LinkedIn: <FaLinkedin />,
-  Github: <FaGithub/>,
-  WhatsApp: <FaWhatsapp />,
+  Github: <FaGithub />,
+  Drive: <FaGoogleDrive />,
   Tiktok: <FaTiktok />,
   Instagram: <FaInstagram />,
 };

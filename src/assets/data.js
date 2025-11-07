@@ -2,22 +2,30 @@ export const aboutme = {
   name: 'Kevin David R.',
   role: 'Web Developer | Graphic Design',
   intro: "Hello, I'm",
-  aboutme: 'I am a fullstack web developer with additional graphic design skills. Ready to collaborate to create creative and functional solutions.',
-  description: `I am a fullstack web developer with additional expertise in graphic design. As a developer, I am able to handle development from frontend to backend to create functional and responsive web applications. In graphic design, I have experience creating attractive visuals that suit branding needs. I am ready to collaborate to deliver comprehensive solutions in each of these areas.`,
   image: '/profil.png',
-  cvLink: '/cv',
+  cvLink: '/cv-kevin-david.pdf',
+  description: `Experienced in web development and graphic design, with a strong background in building responsive web  applications and creating impactful visual designs for branding and marketing. Skilled in both independent and team-based projects, emphasizing functionality, creativity, and timely delivery. Actively involved in organizations that strengthen leadership, communication, and collaboration. Passionate about continuous learning and contributing to the success of every project and organization.`,
+  aboutmedesc: 'Innovative Web Developer & Graphic Designer with a strong focus on functionality, creativity, and delivering professional digital solutions that drive impact.',
+  projectmedesc: 'Bringing ideas to life through responsive web development and creative design with combining performance, aesthetics, and purpose.',
+  quote:
+    'Moving forward with a passion for continuous growth, facing every challenge with creativity, and leading through strong collaboration. Every step focuses on relevant and sustainable solutions, leading the team towards mutual success.',
 };
 
 export const contacts = [
-  { id: 1, name: 'Phone', value: '0882 3363 4050', link: 'https://wa.me/6288233634050' },
-  { id: 2, name: 'Email', value: 'kevien.david22@gmail.com', link: 'mailto:kevien.david22@gmail.com' },
-  { id: 3, name: 'Address', value: 'Sleman, Yogyakarta', link: 'https://maps.app.goo.gl/oo5aqzr1ZuHprMbJ9' },
+  { id: 1, name: 'Tiktok', value: 'Fernanddd_7', link: 'https://www.tiktok.com/@fernanddd_7' },
+  {
+    id: 2,
+    name: 'Email',
+    value: 'kevien.david22@gmail.com',
+    link: 'https://mail.google.com/mail/?view=cm&fs=1&to=kevien.david22@gmail.com&su=Halo%20Kevien&body=Halo%20Kevien%2C%0A%0ASaya%20ingin%20menghubungi%20Anda%20terkait%20portofolio.',
+  },
+  { id: 3, name: 'Address', value: 'Central Java, Indonesia', link: 'https://maps.app.goo.gl/VHSEVHxCykbsorMz6' },
 ];
 
 export const socialLinks = [
   { id: 1, name: 'LinkedIn', url: 'https://www.linkedin.com/kevindavid22' },
   { id: 2, name: 'Github', url: 'https://www.github.com/kevindav22' },
-  { id: 3, name: 'WhatsApp', url: 'https://wa.me/6288233634050' },
+  { id: 3, name: 'Drive', url: 'https://drive.google.com/drive/folders/1BWoGVE733J0KigmLw2hY2M6o4Ss-mlxH' },
   { id: 4, name: 'Tiktok', url: 'https://www.tiktok.com/fernanddd_' },
   { id: 5, name: 'Instagram', url: 'https://www.instagram.com/fernand_p19' },
 ];
@@ -30,13 +38,13 @@ export const resume = [
       {
         id: 1,
         logo: '/logo-amikom.png',
-        title: 'Amikom University of Yogyakarta',
+        title: 'University of Amikom Yogyakarta',
         subtitle: 'S1 – Informatics | 2021 – 2025',
       },
       {
         id: 2,
         logo: '/logo-sma.png',
-        title: 'Sambungmacan 1 Public Senior High School',
+        title: 'State Senior High School 1 Sambungmacan',
         subtitle: 'Science Program | 2017 – 2020',
       },
     ],
@@ -65,55 +73,10 @@ export const resume = [
     items: [
       {
         id: 1,
-        logo: '/logo-hmif.png',
+        logo: '/logo-hmif.avif',
         title: 'Himpunan Mahasiswa Informatika',
         subtitle: 'Koordinator Divisi Aspirasi & Advokasi | Feb 2024 – Sep 2024',
       },
     ],
-  },
-];
-
-export const projects = [
-  {
-    id: 1,
-    category: 'Web Development',
-    title: 'lavatouryogyakarta.com',
-    image: '/lavatouryogyakarta.jpg',
-    description: 'Website dinamis yang dapat diperbarui langsung oleh admin. Dibuat untuk keperluan promosi dan penyajian informasi paket wisata Lava Tour di Yogyakarta. ',
-    link: 'https://lavatouryogyakarta.com',
-    tech: ['React', 'Node.js', 'TailwindCSS'],
-  },
-  {
-    id: 2,
-    category: 'Web Development',
-    title: 'sdn2manjungwonogiri.sch.id',
-    image: '/sdnmanjung.png',
-    description: 'Dashboard untuk manajemen konten pada website utama SDN 2 Manjung, yang memudahkan admin dalam mengelola informasi, berita, dan pembaruan secara terpusat.',
-    link: 'https://myecommerce.com',
-    tech: ['React', 'Node.js', 'TailwindCSS'],
-  },
-  {
-    id: 3,
-    category: 'Graphic Design',
-    title: 'Produk Marketing',
-    image: '/galaxystore-tws-gen4.jpg',
-    description: 'Poster untuk promosi produk TWS untuk tokok Galaxy.s ACC di Shopee ',
-    tech: ['Photoshop'],
-  },
-  {
-    id: 4,
-    category: 'Graphic Design',
-    title: 'Poster Instagram',
-    image: '/skripsep-100.jpg',
-    description: 'Poster untuk promosi jasa di Instagram.',
-    tech: ['Illustrator'],
-  },
-  {
-    id: 5,
-    category: 'Graphic Design',
-    title: 'Design Tshirt',
-    image: '/telma.jpg',
-    description: 'Desain Tshirt untuk acara Syawalan Karang Taruna.',
-    tech: ['CorelDraw'],
   },
 ];

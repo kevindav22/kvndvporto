@@ -33,14 +33,14 @@ const ToolsSection = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-light text-[#C4A77D] mb-6" data-aos="fade-up">
+      <h2 className="text-2xl md:text-3xl font-semibold leading-snug text-[#C4A77D] mb-6" data-aos="fade-up">
         Working Tools
       </h2>
       <div className="flex flex-wrap justify-center gap-2 border border-[#C4A77D] rounded-xl py-8" data-aos="zoom-in-up">
         {tools.map((tool, index) => (
           <div key={tool.id} className="flex flex-col items-center w-20 sm:w-24" data-aos={animations[index % animations.length]} data-aos-delay={(index % 4) * 100}>
             <tool.icon className="w-12 h-12 text-[#C4A77D] border border-[#C4A77D] p-1 rounded-lg" />
-            <p className="mt-2 text-sm text-gray-400 text-center">{tool.name}</p>
+            <p className="mt-2 text-sm md:text-base leading-relaxed text-gray-400 text-center">{tool.name}</p>
           </div>
         ))}
       </div>

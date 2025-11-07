@@ -2,7 +2,7 @@ const SectionList = ({ title, items }) => {
   return (
     <div>
       {/* Judul Section */}
-      <h2 className="text-3xl font-light text-[#C4A77D] mb-6" data-aos="fade-down" data-aos-duration="1000">
+      <h2 className="text-2xl md:text-3xl font-semibold leading-snug text-[#C4A77D] mb-6" data-aos="fade-down" data-aos-duration="1000">
         {title}
       </h2>
 
@@ -18,8 +18,8 @@ const SectionList = ({ title, items }) => {
           >
             <img src={item.logo} alt={item.title} className="w-12 h-12 object-contain rounded" />
             <div>
-              <h3 className="font-light text-xl">{item.title}</h3>
-              <p className="text-gray-400 text-sm">{item.subtitle}</p>
+              <h3 className="text-lg md:text-xl font-semibold text-[#C4A77D] leading-snug">{item.title}</h3>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed ">{item.subtitle}</p>
             </div>
           </div>
         ))}

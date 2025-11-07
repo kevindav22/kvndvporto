@@ -5,8 +5,7 @@ const skills = [
     id: 1,
     title: 'Multitasking',
     icon: FaTasks,
-    description:
-      'I am used to working under pressure and am able to manage multiple projects at once with good results. This ability will help me adapt and remain productive in a dynamic company environment.',
+    description: 'I am used to working under pressure and am able to manage multiple projects at once with good results. This ability will help me adapt and remain productive in a dynamic company environment.',
   },
   {
     id: 2,
@@ -19,25 +18,23 @@ const skills = [
     id: 3,
     title: 'Leadership',
     icon: FaThumbsUp,
-    description:
-      'My organizational experience taught me how to effectively work in teams and lead to achieve common goals. I am ready to leverage these skills to drive collaboration and productivity in the company.',
+    description: 'My organizational experience taught me how to effectively work in teams and lead to achieve common goals. I am ready to leverage these skills to drive collaboration and productivity in the company.',
   },
   {
     id: 4,
     title: 'Creative',
     icon: FaLightbulb,
-    description:
-      'I am able to utilize technology to create new, innovative ideas, so that I can help companies face challenges and seize opportunities with more effective solutions.',
+    description: 'I am able to utilize technology to create new, innovative ideas, so that I can help companies face challenges and seize opportunities with more effective solutions.',
   },
 ];
 
 const WhyHireMe = () => {
   return (
-    <section className="px-6 md:px-20 py-12 text-white">
-      <div className="mx-auto">
+    <section className="bg-[#0e1e32]  px-6 md:px-20 py-12 text-white">
+      <div className="mx-auto max-w-7xl ">
         {/* Judul Section */}
         <div className="text-center mb-10" data-aos="fade-down">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#C4A77D]">Why Hire Me?</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug text-[#C4A77D]">Why Hire Me?</h2>
         </div>
 
         {/* Grid Skill */}
@@ -57,8 +54,8 @@ const WhyHireMe = () => {
               </div>
 
               {/* Teks */}
-              <h3 className="text-base md:text-lg font-semibold text-[#C4A77D] mt-2">{skill.title}</h3>
-              <p className="text-gray-300 text-xs md:text-sm mt-3 leading-relaxed text-justify">{skill.description}</p>
+              <h3 className="text-lg md:text-xl font-semibold text-[#C4A77D] leading-snug mt-2">{skill.title}</h3>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mt-3 text-justify">{skill.description}</p>
             </div>
           ))}
         </div>

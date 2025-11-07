@@ -2,46 +2,36 @@ import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../entities/logo';
 import { FiMenu, FiX } from 'react-icons/fi';
 
-// Menerima isOpen dan setIsOpen sebagai props
 const MobileNavbar = ({ navItems, isOpen, setIsOpen }) => {
   const location = useLocation();
 
   return (
-    <nav className="relative flex items-center justify-between px-6 py-2">
+    <nav className="relative flex items-center justify-between py-2">
       {/* Logo */}
-      <Logo />
-      <button
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        aria-expanded={isOpen}
-        onClick={() => setIsOpen((v) => !v)}
-        className="text-white text-2xl focus:outline-none relative z-[111]" // Z-index sedikit lebih tinggi dari parent
-      >
+      <div className="relative z-[300]">
+        <Logo />
+      </div>
+
+      {/* Tombol Toggle */}
+      <button aria-label={isOpen ? 'Close menu' : 'Open menu'} onClick={() => setIsOpen((v) => !v)} className="text-white text-2xl focus:outline-none relative z-[300]">
         {isOpen ? <FiX /> : <FiMenu />}
       </button>
+
+      {/* Panel Menu Drop-down */}
       <div
-        className={`fixed top-0 left-0 h-full w-3/4 max-w-xs transform transition-transform duration-300 z-[120]
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`absolute top-full left-0 w-full overflow-hidden transition-all duration-500 ease-in-out
+        bg-black/10 backdrop-blur-md border-t border-white/10 shadow-md z-[250]
+        ${isOpen ? 'max-h-[70vh] opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <div className="h-full bg-black p-2 pl-8 flex flex-col shadow-2xl">
-          {/* Logo di dalam panel */}
-          <div className="mb-8">
-            <Logo />
-          </div>
-
-          {/* Menu Links */}
-          <ul className="flex flex-col space-y-6 text-lg">
-            {navItems.map((item) => (
-              <li key={item.path}>
-                <Link to={item.path} onClick={() => setIsOpen(false)} className={`block px-4 py-2 rounded-md transition duration-200 ${location.pathname === item.path ? 'text-[#C4A77D]' : 'text-white hover:text-[#C4A77D]'}`}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Spacer biar isi bawah lebih lega */}
-          <div className="flex-1" />
-        </div>
+        <ul className="flex flex-col text-center py-6 space-y-4 text-lg overflow-y-auto max-h-[70vh]">
+          {navItems.map((item) => (
+            <li key={item.path}>
+              <Link to={item.path} onClick={() => setIsOpen(false)} className={`block py-2 transition duration-200 ${location.pathname === item.path ? 'text-[#C4A77D]' : 'text-white hover:text-[#C4A77D]'}`}>
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

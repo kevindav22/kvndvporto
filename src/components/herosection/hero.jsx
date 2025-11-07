@@ -1,24 +1,72 @@
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import SocialMedia from '../../entities/medsos';
 import { FaDownload } from 'react-icons/fa';
-import Button from '../../entities/button';
 import { aboutme } from '../../assets/data';
 
 const Hero = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  const text = aboutme.role;
+  const typingSpeed = isDeleting ? 40 : 90;
+  const pauseTime = 4000;
+  useEffect(() => {
+    let timeout;
+
+    if (!isDeleting && index < text.length) {
+      // Mengetik huruf satu per satu
+      timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + text.charAt(index));
+        setIndex(index + 1);
+      }, typingSpeed);
+    } else if (isDeleting && index > 0) {
+      // Menghapus huruf satu per satu
+      timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev.slice(0, -1));
+        setIndex(index - 1);
+      }, typingSpeed);
+    } else if (index === text.length && !isDeleting) {
+      // Jeda sebelum hapus
+      timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+    } else if (index === 0 && isDeleting) {
+      // Ulang lagi
+      setIsDeleting(false);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [index, isDeleting]);
+
   return (
-    <section className="text-white flex items-center min-h-screen pt-20 md:pt-0">
-      <div className=" mx-auto px-6 md:px-20">
+    <section className="bg-[#0E1C2D] text-white flex items-center min-h-screen pt-20 md:pt-0">
+      <div className="max-w-7xl mx-auto px-6 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-5 items-center gap-12 md:gap-16">
           {/* TEKS & KONTEN */}
           <div className="order-2 md:order-1 md:col-span-3" data-aos="fade-right">
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <p className="text-base md:text-lg text-gray-300 font-medium">{aboutme.intro}</p>
+              <p className="text-lg md:text-xl text-gray-300 font-medium">{aboutme.intro}</p>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight text-[#C4A77D]">{aboutme.name}</h1>
-              <h2 className="text-lg md:text-2xl mt-3 text-white">{aboutme.role}</h2>
-              <p className="mt-6 text-sm md:text-base text-gray-300  text-justify">{aboutme.description}</p>
-              <div className="mt-8 flex flex-col sm:flex-row items-center gap-6">
-                <Button href={aboutme.cvLink} icon={FaDownload} variant="primary">
+
+              {/* Efek mengetik + cursor */}
+              <div className="flex items-center justify-center md:justify-start">
+                <motion.h2 className="text-lg md:text-xl font-semibold leading-snug text-white" animate={{ opacity: [0.9, 1] }} transition={{ duration: 0.3 }}>
+                  {displayedText}
+                </motion.h2>
+
+                {/* Cursor blinking */}
+                <motion.span className="text-[#C4A77D] text-lg md:text-xl font-semibold ml-1" animate={{ opacity: [1, 0, 1] }} transition={{ repeat: Infinity, duration: 0.8 }}>
+                  |
+                </motion.span>
+              </div>
+
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-gray-300 text-justify">{aboutme.description}</p>
+
+              <div className="mt-8 flex flex-col sm:flex-row items-center gap-6 text-sm md:text-base leading-relaxed">
+                <a href={aboutme.cvLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#C4A77D] text-white font-semibold px-4 py-2 rounded-md hover:bg-[#b0906c] transition-colors">
+                  <FaDownload />
                   Download CV
-                </Button>
+                </a>
                 <SocialMedia />
               </div>
             </div>

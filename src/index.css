@@ -1,7 +1,18 @@
 @import 'tailwindcss';
 
 body {
-  background: #161b30;
+  background: #0e1c2d;
   font-family: plus-jakarta-sans, sans-serif;
   overflow-x: hidden;
+  
+}
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  grid-auto-flow: dense;
+}
+
+.masonry-item {
+  break-inside: avoid;
 }

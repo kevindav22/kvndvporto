@@ -14,8 +14,8 @@ const Resume = () => {
   }, []);
 
   return (
-    <section className="bg-[#0E1C2D] text-[#C4A77D] px-8 md:px-24">
-      <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <section className="bg-[#0e1e32] text-[#C4A77D] px-8 md:px-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 py-12">
         {/* Left Side → Loop semua resume */}
         <div className="lg:col-span-2 space-y-12">
           {resume.map((section, idx) => (
@@ -23,10 +23,11 @@ const Resume = () => {
           ))}
 
           {/* Button CV */}
-          <div data-aos="fade-up" data-aos-delay="100">
-            <Button href={aboutme.cvLink} icon={FaDownload} variant="primary">
+          <div data-aos="fade-up" data-aos-delay="100" className="text-sm md:text-base leading-relaxed">
+            <a href={aboutme.cvLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#C4A77D] text-white font-semibold px-4 py-2 rounded-md hover:bg-[#b0906c] transition-colors">
+              <FaDownload className="text-sm" />
               Download CV
-            </Button>
+            </a>
           </div>
         </div>
 
