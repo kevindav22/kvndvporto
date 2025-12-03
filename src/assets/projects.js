@@ -549,4 +549,51 @@ export const projects = [
     tech: ['React', 'Node.js', 'TailwindCSS'],
     date: 'Januari 2025',
   },
+  {
+    id: 52,
+    category: 'Graphic Design',
+    subcategory: 'Product Design',
+    title: 'Visual Product Softcase Iphone',
+    image: '/project/softcase-17pro.avif',
+    description:
+      'Tracing ulang produk dari foto toko lain lalu mengganti warna agar sesuai varian yang dijual. Mengubah background menjadi gradient halus agar fokus visual lebih kuat dan tampilan lebih modern. Menambahkan efek shadow realistis untuk memberi kedalaman dan kesan produk tiga dimensi.Menyusun tipografi fitur produk dengan gaya yang rapi, kontras, dan selaras dengan visual keseluruhan.',
+    tech: ['Photoshop'],
+    date: 'November 2025',
+  },
+  {
+    id: 53,
+    category: 'Graphic Design',
+    subcategory: 'Product Design',
+    title: 'Visual Product Softcase Iphone',
+    image: '/project/recon-img2.avif',
+    description:
+      'Tracing ulang produk dari foto toko lain lalu mengganti warna agar sesuai varian yang dijual. Mengubah background menjadi gradient halus agar fokus visual lebih kuat dan tampilan lebih modern. Menambahkan efek shadow realistis untuk memberi kedalaman dan kesan produk tiga dimensi.Menyusun tipografi fitur produk dengan gaya yang rapi, kontras, dan selaras dengan visual keseluruhan.',
+    tech: ['Photoshop'],
+    date: 'November 2025',
+  },
+  {
+    id: 54,
+    category: 'Graphic Design',
+    subcategory: 'Poster',
+    title: 'Poster Kegiatan Club Drawing',
+    image: '/project/poster-rusketch.avif',
+    description:
+      'Pembuatan layout poster dengan komposisi grid, pengaturan hierarchy teks (vision, mission, main program), serta penempatan elemen dekoratif agar tetap rapi dan mudah dibaca. Penggantian background menjadi gradasi oranye dengan tambahan tekstur halus dan efek cahaya untuk memberi kedalaman visual tanpa mengganggu konten utama. Penyesuaian elemen grafis seperti ikon, frame rounded, dan efek shadow lembut untuk membuat tampilan lebih modern, clean, dan konsisten dengan identitas visual sekolah. Pengolahan foto kegiatan (color correction, crop, alignment) agar selaras dengan tone poster, serta integrasi hashtag dan branding agar siap digunakan sebagai materi promosi resmi.',
+    tech: ['Photoshop'],
+    date: 'November 2025',
+  },
+  {
+    id: 55,
+    category: 'Graphic Design',
+    subcategory: 'Logo',
+    title: 'Poster Kegiatan Club Drawing',
+    image: '/project/rush.avif',
+    description:
+      'Logo dikembangkan dari sketsa manual untuk memvisualisasikan huruf R sebagai identitas utama, diambil dari nama sekolah RUSHD dan nama klub Rushketch. Bentuk R diolah menjadi siluet burung secara halus sebagai interpretasi dari identitas sekolah yang memiliki simbol udara/garuda, sehingga tetap relevan namun tidak meniru langsung. Elemen kuas dimasukkan pada bagian tegak huruf R untuk menegaskan karakter klub menggambar dan melukis, menjadikan logo memiliki makna ganda yang mudah dikenali. Variasi mockup dibuat di berbagai media untuk memastikan logo tetap terbaca, konsisten, dan fleksibel di beragam ukuran dan latar belakang.',
+    tech: ['CorelDraw'],
+    date: 'November 2025',
+  },
+  
 ];
+
+
