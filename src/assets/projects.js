@@ -586,7 +586,7 @@ export const projects = [
     id: 55,
     category: 'Graphic Design',
     subcategory: 'Logo',
-    title: 'Poster Kegiatan Club Drawing',
+    title: 'Logo Club Drawing Rushketch',
     image: '/project/rush.avif',
     description:
       'Logo dikembangkan dari sketsa manual untuk memvisualisasikan huruf R sebagai identitas utama, diambil dari nama sekolah RUSHD dan nama klub Rushketch. Bentuk R diolah menjadi siluet burung secara halus sebagai interpretasi dari identitas sekolah yang memiliki simbol udara/garuda, sehingga tetap relevan namun tidak meniru langsung. Elemen kuas dimasukkan pada bagian tegak huruf R untuk menegaskan karakter klub menggambar dan melukis, menjadikan logo memiliki makna ganda yang mudah dikenali. Variasi mockup dibuat di berbagai media untuk memastikan logo tetap terbaca, konsisten, dan fleksibel di beragam ukuran dan latar belakang.',

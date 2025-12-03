@@ -20,16 +20,24 @@ const Portfolio = () => {
   // --- Filter Projects ---
   useEffect(() => {
     const filtered = activeCategory === 'All' ? [...projects].sort((a, b) => b.id - a.id) : projects.filter((p) => p.category === activeCategory).sort((a, b) => b.id - a.id);
+
     setFilteredProjects(filtered);
     setPage(0);
   }, [activeCategory]);
 
-  // --- Scroll to Filter ---
+  // --- Scroll ke Filter SETELAH render selesai ---
   const scrollToFilter = () => {
     if (filterRef.current) {
-      filterRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      filterRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     }
   };
+
+  useEffect(() => {
+    if (!loading) scrollToFilter();
+  }, [page, activeCategory, loading]);
 
   // --- Handle Image Scale ---
   const handleImageLoad = (id, e) => {
@@ -52,8 +60,7 @@ const Portfolio = () => {
     setTimeout(() => {
       callback();
       setLoading(false);
-      scrollToFilter();
-    }, 600); // durasi efek loading
+    }, 600);
   };
 
   const handleNext = () => {
@@ -117,7 +124,7 @@ const Portfolio = () => {
                     data-aos-duration="800"
                     data-aos-easing="ease-in-out"
                     onClick={() => setSelectedProject(project)}
-                    className="relative cursor-pointer break-inside-avoid overflow-hidden rounded-md border border-[#C4A77D] bg-[#162433] hover:scale-[1.01] transition-transform duration-300 flex justify-center items-center"
+                    className="relative cursor-pointer break-inside-avoid overflow-hidden rounded-md bg-[#162433] hover:scale-[1.01] transition-transform duration-300 flex justify-center items-center"
                     onContextMenu={(e) => e.preventDefault()}
                   >
                     <img
@@ -156,6 +163,7 @@ const Portfolio = () => {
               <button onClick={handlePrev} disabled={page === 0} className={`px-4 py-2 rounded-md transition ${page === 0 ? 'bg-gray-600 text-gray-300 cursor-not-allowed' : 'bg-[#C4A77D] text-[#0E1C2D] hover:bg-[#A3875C]'}`}>
                 Prev
               </button>
+
               <button
                 onClick={handleNext}
                 disabled={startIndex + itemsPerPage >= filteredProjects.length}
@@ -169,17 +177,6 @@ const Portfolio = () => {
 
         <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       </div>
-
-      {/* CSS untuk animasi FaReact */}
-      <style>{`
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 3s linear infinite;
-        }
-      `}</style>
     </section>
   );
 };
