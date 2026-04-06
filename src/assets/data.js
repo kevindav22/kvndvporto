@@ -3,7 +3,7 @@ export const aboutme = {
   role: 'Web Developer | Graphic Design',
   intro: "Hello, I'm",
   image: '/profil.png',
-  cvLink: '/cv-kevin-david.pdf',
+  cvLink: 'https://drive.google.com/drive/folders/1rMyAUWNX4IPzZCgiA4FgT7B0FKzEiwoQ?usp=sharing',
   description: `Experienced in web development and graphic design, with a strong background in building responsive web  applications and creating impactful visual designs for branding and marketing. Skilled in both independent and team-based projects, emphasizing functionality, creativity, and timely delivery. Actively involved in organizations that strengthen leadership, communication, and collaboration. Passionate about continuous learning and contributing to the success of every project and organization.`,
   aboutmedesc: 'Innovative Web Developer & Graphic Designer with a strong focus on functionality, creativity, and delivering professional digital solutions that drive impact.',
   projectmedesc: 'Bringing ideas to life through responsive web development and creative design with combining performance, aesthetics, and purpose.',

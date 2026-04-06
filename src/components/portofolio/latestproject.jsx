@@ -7,8 +7,7 @@ const LatestProject = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   // Ambil 4 proyek terbaru langsung dari data projects
-const latestProjects = [...projects].sort((a, b) => b.id - a.id).slice(0, 5);
-
+  const latestProjects = [...projects].sort((a, b) => b.id - a.id).slice(0, 5);
 
   const handleViewDetails = (project) => setSelectedProject(project);
 
@@ -31,7 +30,10 @@ const latestProjects = [...projects].sort((a, b) => b.id - a.id).slice(0, 5);
 
               {/* Judul & Tombol di satu baris */}
               <div className="flex flex-row items-center justify-between w-full mt-4 md:mt-0 md:ml-6">
-                <h3 className="text-lg md:text-xl font-semibold text-[#C4A77D] truncate">{project.title}</h3>
+                <div>
+                  <p className="text-gray-400 text-xs md:text-sm">{project.subcategory}</p>
+                  <h3 className="text-lg md:text-xl font-semibold text-[#C4A77D] truncate">{project.title}</h3>
+                </div>
 
                 <Button
                   variant="primary"
