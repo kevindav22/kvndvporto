@@ -32,7 +32,7 @@ const LatestProject = () => {
               <div className="flex flex-row items-center justify-between w-full mt-4 md:mt-0 md:ml-6">
                 <div>
                   <p className="text-gray-400 text-xs md:text-sm">{project.subcategory}</p>
-                  <h3 className="text-lg md:text-xl font-semibold text-[#C4A77D] truncate">{project.title}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold text-[#C4A77D] leading-tight">{project.title}</h3>
                 </div>
 
                 <Button
